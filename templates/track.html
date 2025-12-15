@@ -17,12 +17,15 @@
                 </a>Kapı Kapı</div>
             <nav class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="send.html">Gönderi Oluştur</a></li>
-                    <li><a href="track.html" class="active">Gönderi Takip</a></li>
-                    <li><a href="courier.html">Kurye Ol</a></li>
+                    <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+                    <li><a href="{{ url_for('send') }}">Gönderi Oluştur</a></li>
+                    <li><a href="{{ url_for('track') }}">Gönderi Takip</a></li>
+                    <li><a href="{{ url_for('courier') }}">Kurye Ol</a></li>
+                    <li><a href="{{ url_for('login') }}" style="color: #ff7a1a; font-weight: 600;">Giriş Yap</a></li>
+</ul>
                 </ul>
-                <a href="send.html" class="btn btn-small">Hemen Gönder</a>
+                <a href="{{ url_for('send') }}" class="btn btn-small">Hemen Gönder</a>
             </nav>
         </div>
     </header>

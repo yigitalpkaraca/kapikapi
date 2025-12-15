@@ -19,12 +19,15 @@
             </div>
             <nav class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="send.html">Gönderi Oluştur</a></li>
-                    <li><a href="track.html">Gönderi Takip</a></li>
-                    <li><a href="courier.html">Kurye Ol</a></li>
-                    <li><a href="login.html" style="color: var(--orange); font-weight: 600;">Giriş Yap</a></li>
+                    <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+                    <li><a href="{{ url_for('send') }}">Gönderi Oluştur</a></li>
+                    <li><a href="{{ url_for('track') }}">Gönderi Takip</a></li>
+                    <li><a href="{{ url_for('courier') }}">Kurye Ol</a></li>
+                    <li><a href="{{ url_for('login') }}" style="color: #ff7a1a; font-weight: 600;">Giriş Yap</a></li>
+</ul>
                 </ul>
+                <a href="{{ url_for('send') }}" class="btn btn-small">Hemen Gönder</a>
                 <a href="send.html" class="btn btn-small">Hemen Gönder</a>
             </nav>
         </div>
@@ -80,7 +83,7 @@
                     <button type="submit" class="btn btn-block">Hesap Oluştur</button>
 
                     <div class="form-footer">
-                        Zaten hesabın var mı? <a href="login.html">Giriş Yap</a>
+                        Zaten hesabın var mı? <a href="{{ url_for('login') }}">Giriş Yap</a>
                     </div>
                 </form>
             </div>
