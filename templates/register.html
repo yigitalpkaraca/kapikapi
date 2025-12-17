@@ -22,13 +22,19 @@
                     <ul class="nav-links">
                     <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
                     <li><a href="{{ url_for('send') }}">Gönderi Oluştur</a></li>
-                    <li><a href="{{ url_for('track') }}">Gönderi Takip</a></li>
-                    <li><a href="{{ url_for('courier') }}">Kurye Ol</a></li>
-                    <li><a href="{{ url_for('login') }}" style="color: #ff7a1a; font-weight: 600;">Giriş Yap</a></li>
+    
+                    {% if session.get('user_name') %}
+                        <li style="color: #0dbf87; font-weight: 700;">Hoş geldin, {{ session['user_name'] }}</li>
+                        <li><a href="{{ url_for('logout') }}" style="color: #ff7a1a;">Çıkış Yap</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('track') }}">Gönderi Takip</a></li>
+                        <li><a href="{{ url_for('courier') }}">Kurye Ol</a></li>
+                        <li><a href="{{ url_for('login') }}" style="color: #ff7a1a; font-weight: 600;">Giriş Yap</a></li>
+                    {% endif %}
 </ul>
                 </ul>
                 <a href="{{ url_for('send') }}" class="btn btn-small">Hemen Gönder</a>
-                <a href="send.html" class="btn btn-small">Hemen Gönder</a>
+                
             </nav>
         </div>
     </header>
@@ -43,29 +49,29 @@
 
         <section class="form-section">
             <div class="container login-layout">
-                <form class="main-form">
+                <form class="main-form" method="POST" action="{{url_for('register')}}">
                     <h2>Kayıt Formu</h2>
                     
                     <div class="form-grid">
                         <label>
                             Ad Soyad
-                            <input type="text" placeholder="Adın ve soyadın" required>
+                            <input type="text" name="fullname" placeholder="Adın ve soyadın" required>
                         </label>
                         <label>
                             Telefon
-                            <input type="tel" placeholder="05XX XXX XX XX" required>
+                            <input type="tel" name="phone" placeholder="05XX XXX XX XX" required>
                         </label>
                     </div>
 
                     <label>
                         E-posta Adresi
-                        <input type="email" placeholder="ornek@email.com" required>
+                        <input type="email" name ="email" placeholder="ornek@email.com" required>
                     </label>
 
                     <div class="form-grid">
                         <label>
                             Şifre
-                            <input type="password" placeholder="********" required>
+                            <input type="password" name ="password" placeholder="********" required>
                         </label>
                         <label>
                             Şifre Tekrar
