@@ -606,21 +606,19 @@ textarea {
         margin-top: 1rem;
     }
 }
-/* --- Login ve Register Sayfası Eklemeleri --- */
 
-/* Formu sayfanın ortasına hizalar */
 .login-layout {
     display: flex;
     justify-content: center;
 }
 
-/* Formun çok geniş olmasını engeller, mobil uyumlu daraltır */
+
 .login-layout .main-form {
     width: 100%;
     max-width: 420px;
 }
 
-/* "Beni hatırla", "Sözleşme onayı" ve "Şifremi unuttum" alanı */
+
 .form-extras {
     display: flex;
     justify-content: space-between;
@@ -630,7 +628,7 @@ textarea {
     margin-top: 0.5rem;
 }
 
-/* Checkbox (kutucuk) ve yazısının hizalanması */
+
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -639,7 +637,7 @@ textarea {
     cursor: pointer;
 }
 
-/* Şifremi unuttum linki */
+
 .forgot-link {
     color: var(--muted);
     text-decoration: none;
@@ -649,7 +647,7 @@ textarea {
     color: var(--orange);
 }
 
-/* Alt kısımdaki "Hesabın yok mu?" alanı */
+
 .form-footer {
     text-align: center;
     font-size: 0.9rem;
